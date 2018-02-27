@@ -6,7 +6,7 @@ Gem::Specification.new do |spec|
   spec.description   = "Help your Lita chatbot ask Cleverbot when she runs out of things to say."
   spec.summary       = "Help your Lita chatbot ask Cleverbot when she runs out of things to say."
   spec.homepage      = "https://github.com/dpritchett/lita-cleverbot-demo"
-  spec.license       = "TODO: Add a license"
+  spec.license       = "MIT"
   spec.metadata      = { "lita_plugin_type" => "handler" }
 
   spec.files         = `git ls-files`.split($/)
