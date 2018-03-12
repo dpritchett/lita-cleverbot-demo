@@ -1,5 +1,5 @@
+# START:setup
 require 'cleverbot'
-require 'pry'
 
 module Lita
   module Handlers
@@ -9,7 +9,9 @@ module Lita
       config :cleverbot_key, default: ENV.fetch('CLEVERBOT_KEY')
 
       route /^cleverbot (.+)$/i, :handle_cleverbot
+      # END:setup
 
+      # START:implementation
       def handle_cleverbot(payload)
         clever_input = payload.matches.last
 
@@ -23,6 +25,7 @@ module Lita
       def client
         @_client ||= Cleverbot.new(config.cleverbot_user, config.cleverbot_key)
       end
+      # END:implementation
 
       Lita.register_handler(self)
     end

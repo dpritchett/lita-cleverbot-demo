@@ -1,13 +1,11 @@
-require "spec_helper"
+require 'spec_helper'
 
 describe Lita::Handlers::CleverbotDemo, lita_handler: true do
-  it { is_expected.to route("Lita cleverbot hello") }
-  it { is_expected.to_not route("Lita clever hello") }
+  it { is_expected.to route('Lita cleverbot hello') }
+  it { is_expected.to_not route('Lita clever hello') }
 
   describe 'ask cleverbot a question' do
-
     context 'given an english input' do
-      
       let(:question) { 'hi cleverbot' }
       let(:result) { subject.ask_cleverbot question }
 
@@ -17,9 +15,7 @@ describe Lita::Handlers::CleverbotDemo, lita_handler: true do
         expect(word_count).to be > 1
         expect(result).to match(/\w+/)
       end
-
     end
-
   end
 
   describe 'lita integration test' do
@@ -29,5 +25,4 @@ describe Lita::Handlers::CleverbotDemo, lita_handler: true do
       expect(replies.last).to match(/\w+/)
     end
   end
-
 end
